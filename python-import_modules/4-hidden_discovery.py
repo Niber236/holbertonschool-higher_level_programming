@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-if __name__ == "__main__":
-    import hidden_4
+import hidden_4
 
+
+if __name__ == "__main__":
     names = dir(hidden_4)
     for name in sorted(names):
         if not name.startswith("__"):
