@@ -1,0 +1,35 @@
+The ``5-text_indentation`` module
+=================================
+
+Using ``text_indentation``
+--------------------------
+
+Importing the function:
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Printing a text with .:
+
+    >>> text_indentation("Hello. World")
+    Hello.
+    <BLANKLINE>
+    World
+
+Printing a text with ?:
+
+    >>> text_indentation("Hello? World")
+    Hello?
+    <BLANKLINE>
+    World
+
+Printing a text with ::
+
+    >>> text_indentation("Hello: World")
+    Hello:
+    <BLANKLINE>
+    World
+
+Printing a text with multiple spaces:
+
+    >>> text_indentation("Hello    World")
+    Hello    World
