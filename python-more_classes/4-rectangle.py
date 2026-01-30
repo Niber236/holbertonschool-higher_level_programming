@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module 3-rectangle: Définit un rectangle avec affichage __str__.
+Module 4-rectangle: Définit un rectangle avec __str__ et __repr__.
 """
 
 
@@ -54,7 +54,7 @@ class Rectangle:
 
     def __str__(self):
         """
-        Retourne la représentation visuelle du rectangle avec des #.
+        Retourne la représentation visuelle (#).
         """
         if self.width == 0 or self.height == 0:
             return ""
@@ -62,5 +62,12 @@ class Rectangle:
         rect = []
         for i in range(self.height):
             rect.append("#" * self.width)
-        # On colle les lignes avec un saut de ligne entre chaque
         return "\n".join(rect)
+
+    def __repr__(self):
+        """
+        Retourne la représentation officielle (code pour recréer l'objet).
+        Format: Rectangle(width, height)
+        """
+        return "Rectangle({}, {})".format(self.width, self.height)
+    
