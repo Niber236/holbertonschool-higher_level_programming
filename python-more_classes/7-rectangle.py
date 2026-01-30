@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module 6-rectangle: Définit un rectangle avec compteur d'instances.
+Module 7-rectangle: Définit un rectangle avec symbole d'affichage variable.
 """
 
 
@@ -8,17 +8,17 @@ class Rectangle:
     """
     Classe définissant un rectangle.
     Attributs de classe:
-        number_of_instances (int): Le nombre d'instances actives.
+        number_of_instances (int): Compteur d'instances.
+        print_symbol (any): Symbole utilisé pour l'affichage (défaut #).
     """
 
-    # C'est ICI qu'on déclare le compteur (hors des fonctions)
     number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """ Init """
         self.width = width
         self.height = height
-        # À chaque naissance, on incrémente le compteur GLOBAL
         Rectangle.number_of_instances += 1
 
     @property
@@ -60,13 +60,17 @@ class Rectangle:
         return (self.width + self.height) * 2
 
     def __str__(self):
-        """ Représentation visuelle """
+        """
+        Retourne la représentation visuelle avec le symbole actuel.
+        """
         if self.width == 0 or self.height == 0:
             return ""
         
         rect = []
+        # On convertit en string pour être sûr (str(self.print_symbol))
+        symbol = str(self.print_symbol)
         for i in range(self.height):
-            rect.append("#" * self.width)
+            rect.append(symbol * self.width)
         return "\n".join(rect)
 
     def __repr__(self):
@@ -77,6 +81,5 @@ class Rectangle:
         """
         Décrémente le compteur et affiche un message.
         """
-
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
