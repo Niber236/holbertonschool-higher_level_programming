@@ -1,17 +1,25 @@
 #!/usr/bin/python3
 """
-Module 5-rectangle: Définit un rectangle avec détection de suppression.
+Module 6-rectangle: Définit un rectangle avec compteur d'instances.
 """
+
 
 class Rectangle:
     """
     Classe définissant un rectangle.
+    Attributs de classe:
+        number_of_instances (int): Le nombre d'instances actives.
     """
+
+    # C'est ICI qu'on déclare le compteur (hors des fonctions)
+    number_of_instances = 0
 
     def __init__(self, width=0, height=0):
         """ Init """
         self.width = width
         self.height = height
+        # À chaque naissance, on incrémente le compteur GLOBAL
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -67,6 +75,8 @@ class Rectangle:
 
     def __del__(self):
         """
-        Affiche un message lors de la suppression de l'instance.
+        Décrémente le compteur et affiche un message.
         """
+        # À chaque mort, on décrémente le compteur GLOBAL
+        Rectangle.number_of_instances -= 1
         print("Bye rectangle...")

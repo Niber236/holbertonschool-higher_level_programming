@@ -62,5 +62,5 @@ class Rectangle:
         rect = []
         for i in range(self.height):
             rect.append("#" * self.width)
-        # On colle les lignes avec un saut de ligne entre chaque
+  
         return "\n".join(rect)
