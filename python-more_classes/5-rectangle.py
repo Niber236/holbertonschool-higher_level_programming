@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module 4-rectangle: Définit un rectangle avec __str__ et __repr__.
+Module 5-rectangle: Définit un rectangle avec détection de suppression.
 """
 
 
@@ -53,9 +53,7 @@ class Rectangle:
         return (self.width + self.height) * 2
 
     def __str__(self):
-        """
-        Retourne la représentation visuelle (#).
-        """
+        """ Représentation visuelle """
         if self.width == 0 or self.height == 0:
             return ""
         
@@ -65,8 +63,11 @@ class Rectangle:
         return "\n".join(rect)
 
     def __repr__(self):
-        """
-        Retourne la représentation officielle (code pour recréer l'objet).
-        Format: Rectangle(width, height)
-        """
+        """ Représentation officielle """
         return "Rectangle({}, {})".format(self.width, self.height)
+
+    def __del__(self):
+        """
+        Affiche un message lors de la suppression de l'instance.
+        """
+        print("Bye rectangle...")
