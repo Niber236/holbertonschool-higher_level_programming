@@ -31,8 +31,6 @@ class VerboseList(list):
         """
         Retire un item à un index donné (défaut dernier) et notifie avant.
         """
-        # On récupère l'objet pour pouvoir l'afficher dans le message
-        # Note : Si l'index est invalide, self[index] lèvera l'erreur, ce qui est le comportement attendu.
         item = self[index]
         print("Popped [{}] from the list.".format(item))
         return super().pop(index)
