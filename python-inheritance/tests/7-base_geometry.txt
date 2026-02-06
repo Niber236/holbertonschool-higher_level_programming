@@ -5,36 +5,57 @@
 >>> bg.integer_validator("my_int", 12)
 >>> bg.integer_validator("width", 89)
 
->>> # 2. Test String (Doit échouer)
+>>> # 2. Test String
 >>> bg.integer_validator("name", "John")
 Traceback (most recent call last):
 TypeError: name must be an integer
 
+>>> # 3. Test Float
 >>> bg.integer_validator("age", 13.5)
 Traceback (most recent call last):
 TypeError: age must be an integer
 
->>> # 4. Test Boolean (Doit échouer - Le piège classique)
+>>> # 4. Test Boolean (Le piege)
 >>> bg.integer_validator("flag", True)
 Traceback (most recent call last):
 TypeError: flag must be an integer
 
->>> # 5. Test List (Doit échouer)
+>>> # 5. Test List
 >>> bg.integer_validator("list", [1, 2])
 Traceback (most recent call last):
 TypeError: list must be an integer
 
->>> # 6. Test Tuple (Doit échouer)
+>>> # 6. Test Tuple
 >>> bg.integer_validator("tuple", (1, 2))
 Traceback (most recent call last):
 TypeError: tuple must be an integer
 
->>> # 7. Test Zéro (Doit échouer)
+>>> # 7. Test Set
+>>> bg.integer_validator("set", {1, 2})
+Traceback (most recent call last):
+TypeError: set must be an integer
+
+>>> # 8. Test None (Tres important)
+>>> bg.integer_validator("none", None)
+Traceback (most recent call last):
+TypeError: none must be an integer
+
+>>> # 9. Test Complex
+>>> bg.integer_validator("complex", 2+3j)
+Traceback (most recent call last):
+TypeError: complex must be an integer
+
+>>> # 10. Test Dict
+>>> bg.integer_validator("dict", {'a': 1})
+Traceback (most recent call last):
+TypeError: dict must be an integer
+
+>>> # 11. Test Zero
 >>> bg.integer_validator("age", 0)
 Traceback (most recent call last):
 ValueError: age must be greater than 0
 
->>> # 8. Test Négatif (Doit échouer)
+>>> # 12. Test Negatif
 >>> bg.integer_validator("distance", -4)
 Traceback (most recent call last):
 ValueError: distance must be greater than 0
