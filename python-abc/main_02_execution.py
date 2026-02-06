@@ -1,16 +1,9 @@
 #!/usr/bin/env python3
-from task_02_execution import NoPylist
+from task_02 verboselist import VerboseList
 
-my_list = NoPylist()
-
-# 1. Test valide (Doit marcher)
-my_list.append(1)
-my_list.append(4)
-my_list.append(5)
-print(my_list)
-
-# 2. Test invalide (Doit planter)
-try:
-    my_list.append("Hello")
-except TypeError as e:
-    print(e)
+vl = VerboseList([1, 2, 3])
+vl.append(4)
+vl.extend([5, 6])
+vl.remove(2)
+vl.pop()
+vl.pop(0)
