@@ -1,1 +1,1 @@
- exo Sql
+ exercice  Sql
